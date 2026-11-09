@@ -1,22 +1,47 @@
-﻿
-Console.WriteLine("Enter the number of candles:");
-int candlesCount = Convert.ToInt32(Console.ReadLine().Trim());
-Console.WriteLine("Enter the heights of the candles separated by spaces:");
-List<int> candles = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(candlesTemp => Convert.ToInt32(candlesTemp)).ToList();
+﻿namespace Katas.BirthdayCakeCandles;
 
-int result = BirthdayCakeCandles(candles);
-
-Console.WriteLine("The number of tallest candles is:");
-Console.WriteLine(result);
-
-/*
-* Complete the 'birthdayCakeCandles' function below.
-*
-* The function is expected to return an INTEGER.
-* The function accepts INTEGER_ARRAY candles as parameter.
-*/
-static int BirthdayCakeCandles(List<int> candles)
+public static class BirthdayCakeCandlesProgram
 {
-    int tallestHeight = candles.Max();
-    return candles.Count(c => c == tallestHeight);
+    public static void Main() => Run();
+
+    public static void Run()
+    {
+        Console.WriteLine("Enter the number of candles:");
+        if (!int.TryParse(Console.ReadLine(), out int candlesCount) || candlesCount <= 0)
+        {
+            Console.WriteLine("Enter a positive number of candles.");
+            return;
+        }
+
+        Console.WriteLine("Enter the heights of the candles separated by spaces:");
+        string[] values = (Console.ReadLine() ?? "")
+            .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        if (values.Length != candlesCount)
+        {
+            Console.WriteLine($"Enter exactly {candlesCount} candle heights.");
+            return;
+        }
+
+        var candles = new List<int>(candlesCount);
+
+        foreach (string value in values)
+        {
+            if (!int.TryParse(value, out int height) || height <= 0)
+            {
+                Console.WriteLine("Enter only positive whole numbers for the heights.");
+                return;
+            }
+
+            candles.Add(height);
+        }
+
+        Console.WriteLine($"The number of tallest candles is {BirthdayCakeCandles(candles)}.");
+    }
+
+    private static int BirthdayCakeCandles(List<int> candles)
+    {
+        int tallestHeight = candles.Max();
+        return candles.Count(height => height == tallestHeight);
+    }
 }

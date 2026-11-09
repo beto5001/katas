@@ -6,14 +6,14 @@ public static class BirthdayCakeCandlesProgram
 
     public static void Run()
     {
-        Console.WriteLine("Enter the number of candles:");
+        Console.WriteLine("Enter the number of candles: ");
         if (!int.TryParse(Console.ReadLine(), out int candlesCount) || candlesCount <= 0)
         {
             Console.WriteLine("Enter a positive number of candles.");
             return;
         }
 
-        Console.WriteLine("Enter the heights of the candles separated by spaces:");
+        Console.WriteLine("Enter the heights of the candles separated by spaces: ");
         string[] values = (Console.ReadLine() ?? "")
             .Split(' ', StringSplitOptions.RemoveEmptyEntries);
 

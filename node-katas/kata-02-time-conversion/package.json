@@ -1,0 +1,10 @@
+{
+  "name": "kata-02-time-conversion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kata 2 - Time Conversion",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node test/time-conversion.test.js"
+  }
+}

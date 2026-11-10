@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="1- Birthday Cake Candles/1- Birthday Cake Candles.csproj" />
+  <Project Path="2- Time Conversion/2- Time Conversion.csproj" />
   <Project Path="katas/katas.csproj" />
 </Solution>

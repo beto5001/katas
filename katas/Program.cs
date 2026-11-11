@@ -4,7 +4,8 @@
 {
     ("Birthday Cake Candles", BirthdayCakeCandlesProgram.Run),
     ("Time Conversion", Katas.TimeConversion.TimeConversionProgram.Run),
-    ("Grading Students", Katas.GradingStudents.GradingStudentsProgram.Run)
+    ("Grading Students", Katas.GradingStudents.GradingStudentsProgram.Run),
+    ("Apple and Orange", Katas.AppleAndOrange.AppleAndOrangeProgram.Run)
 };
 
 while (true)

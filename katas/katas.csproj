@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\1- Birthday Cake Candles\1- Birthday Cake Candles.csproj" />
     <ProjectReference Include="..\2- Time Conversion\2- Time Conversion.csproj" />
+    <ProjectReference Include="..\3- Grading Students\3- Grading Students.csproj" />
   </ItemGroup>
 
 </Project>

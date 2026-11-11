@@ -3,7 +3,8 @@
 (string Name, Action Run)[] katas =
 {
     ("Birthday Cake Candles", BirthdayCakeCandlesProgram.Run),
-    ("Time Conversion", Katas.TimeConversion.TimeConversionProgram.Run)
+    ("Time Conversion", Katas.TimeConversion.TimeConversionProgram.Run),
+    ("Grading Students", Katas.GradingStudents.GradingStudentsProgram.Run)
 };
 
 while (true)

@@ -12,6 +12,7 @@
     <ProjectReference Include="..\2- Time Conversion\2- Time Conversion.csproj" />
     <ProjectReference Include="..\3- Grading Students\3- Grading Students.csproj" />
     <ProjectReference Include="..\4- Apple and Orange\4- Apple and Orange.csproj" />
+    <ProjectReference Include="..\5- Kangaroo\5- Kangaroo.csproj" />
   </ItemGroup>
 
 </Project>

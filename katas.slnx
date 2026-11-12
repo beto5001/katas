@@ -3,5 +3,6 @@
   <Project Path="2- Time Conversion/2- Time Conversion.csproj" />
   <Project Path="3- Grading Students/3- Grading Students.csproj" />
   <Project Path="4- Apple and Orange/4- Apple and Orange.csproj" />
+  <Project Path="5- Kangaroo/5- Kangaroo.csproj" />
   <Project Path="katas/katas.csproj" />
 </Solution>

@@ -6,100 +6,70 @@ public static class AppleAndOrangeProgram
 
     public static void Run()
     {
-        Console.Write("Início e fim da casa (ex.: 7 11): ");
-        if (!TryReadPair(out int houseStart, out int houseEnd) || houseStart > houseEnd)
-        {
-            Console.WriteLine("Informe um intervalo válido para a casa.");
-            return;
-        }
+        Console.Write("Informe o início (s) e o fim (t) da casa, separados por espaço (ex.: 7 11): ");
+        string[] firstMultipleInput = Console.ReadLine()!.TrimEnd().Split(' ');
 
-        Console.Write("Posições da macieira e da laranjeira (ex.: 5 15): ");
-        if (!TryReadPair(out int appleTreePosition, out int orangeTreePosition))
-        {
-            Console.WriteLine("Informe posições válidas para as árvores.");
-            return;
-        }
+        int s = Convert.ToInt32(firstMultipleInput[0]);
+        int t = Convert.ToInt32(firstMultipleInput[1]);
 
-        Console.Write("Distâncias das maçãs (ex.: -2 2 1): ");
-        if (!TryReadIntegers(out List<int> apples))
-        {
-            Console.WriteLine("Informe as distâncias das maçãs como números inteiros.");
-            return;
-        }
+        Console.Write("Informe as posições da macieira (a) e da laranjeira (b), separadas por espaço (ex.: 5 15): ");
+        string[] secondMultipleInput = Console.ReadLine()!.TrimEnd().Split(' ');
 
-        Console.Write("Distâncias das laranjas (ex.: 5 -6): ");
-        if (!TryReadIntegers(out List<int> oranges))
-        {
-            Console.WriteLine("Informe as distâncias das laranjas como números inteiros.");
-            return;
-        }
+        int a = Convert.ToInt32(secondMultipleInput[0]);
+        int b = Convert.ToInt32(secondMultipleInput[1]);
 
-        (int applesOnHouse, int orangesOnHouse) = CountApplesAndOranges(
-            houseStart,
-            houseEnd,
-            appleTreePosition,
-            orangeTreePosition,
-            apples,
-            oranges);
+        Console.Write("Informe as quantidades de maçãs (m) e laranjas (n), separadas por espaço (ex.: 3 2): ");
+        string[] thirdMultipleInput = Console.ReadLine()!.TrimEnd().Split(' ');
 
-        Console.WriteLine($"Maçãs que caíram na casa: {applesOnHouse}");
-        Console.WriteLine($"Laranjas que caíram na casa: {orangesOnHouse}");
+        int m = Convert.ToInt32(thirdMultipleInput[0]);
+        int n = Convert.ToInt32(thirdMultipleInput[1]);
+
+        Console.Write("Informe as distâncias das maçãs, separadas por espaço (ex.: -2 2 1): ");
+        List<int> apples = Console.ReadLine()!.TrimEnd().Split(' ').ToList()
+            .Select(applesTemp => Convert.ToInt32(applesTemp)).ToList();
+
+        Console.Write("Informe as distâncias das laranjas, separadas por espaço (ex.: 5 -6): ");
+        List<int> oranges = Console.ReadLine()!.TrimEnd().Split(' ').ToList()
+            .Select(orangesTemp => Convert.ToInt32(orangesTemp)).ToList();
+
+        Result.CountApplesAndOranges(s, t, a, b, apples, oranges);
     }
+}
 
-    public static (int ApplesOnHouse, int OrangesOnHouse) CountApplesAndOranges(
-        int houseStart,
-        int houseEnd,
-        int appleTreePosition,
-        int orangeTreePosition,
-        IEnumerable<int> apples,
-        IEnumerable<int> oranges) =>
-        (CountFruitOnHouse(houseStart, houseEnd, appleTreePosition, apples),
-         CountFruitOnHouse(houseStart, houseEnd, orangeTreePosition, oranges));
-
-    private static int CountFruitOnHouse(
-        int houseStart,
-        int houseEnd,
-        int treePosition,
-        IEnumerable<int> distances) =>
-        distances.Count(distance =>
-        {
-            int landingPosition = treePosition + distance;
-            return landingPosition >= houseStart && landingPosition <= houseEnd;
-        });
-
-    private static bool TryReadPair(out int first, out int second)
+public static class Result
+{
+    public static void CountApplesAndOranges(int limiteInicialDaCasa,
+                                             int limiteFinalDaCasa,
+                                             int localizacaoDaMacieira,
+                                             int localizacaoDaLaranjeira,
+                                             List<int> apples,
+                                             List<int> oranges)
     {
-        first = 0;
-        second = 0;
+        int macasNoPerimetroDaCasa = apples.Sum(localizacaoFruta => EstaNoTerrenoDaCasa(limiteInicialDaCasa,
+                                                                                        limiteFinalDaCasa,
+                                                                                        localizacaoDaMacieira,
+                                                                                        localizacaoFruta));
 
-        string? input = Console.ReadLine();
-        string[] values = input?.Split(' ', StringSplitOptions.RemoveEmptyEntries) ?? [];
+        int laranjasNoPerimetroDaCasa = oranges.Sum(localizacaoFruta => EstaNoTerrenoDaCasa(limiteInicialDaCasa,
+                                                                                            limiteFinalDaCasa,
+                                                                                            localizacaoDaLaranjeira,
+                                                                                            localizacaoFruta));
 
-        return values.Length == 2
-            && int.TryParse(values[0], out first)
-            && int.TryParse(values[1], out second);
+
+        Console.WriteLine(macasNoPerimetroDaCasa);
+        Console.WriteLine(laranjasNoPerimetroDaCasa);
     }
 
-    private static bool TryReadIntegers(out List<int> values)
+    private static int EstaNoTerrenoDaCasa(int limiteInicialDaCasa, int limiteFinalDaCasa, int localizacaoArvore, int localizacaoFruta)
     {
-        values = [];
-        string? input = Console.ReadLine();
+        int localizacaoRelativaFruta = localizacaoArvore + localizacaoFruta;
 
-        if (string.IsNullOrWhiteSpace(input))
-        {
-            return false;
-        }
+        if (localizacaoRelativaFruta.IsBetween(limiteInicialDaCasa, limiteFinalDaCasa))
+            return 1;
 
-        foreach (string value in input.Split(' ', StringSplitOptions.RemoveEmptyEntries))
-        {
-            if (!int.TryParse(value, out int number))
-            {
-                return false;
-            }
-
-            values.Add(number);
-        }
-
-        return true;
+        return 0;
     }
+
+    private static bool IsBetween(this int referencia, int inicial, int final) =>
+        referencia >= inicial && referencia <= final;
 }

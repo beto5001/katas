@@ -8,34 +8,77 @@ public static class KangarooProgram
     {
         Console.Write("Posições e saltos (x1 v1 x2 v2, ex.: 0 3 4 2): ");
 
-        if (!TryReadInput(out int x1, out int v1, out int x2, out int v2))
+        if (!TryReadInput(
+                out int posicaoInicialCanguru1,
+                out int distanciaDoPuloCanguru1,
+                out int posicaoInicialCanguru2,
+                out int distanciaDoPuloCanguru2))
         {
             Console.WriteLine("Informe quatro números inteiros separados por espaço.");
             return;
         }
 
-        Console.WriteLine(Kangaroo(x1, v1, x2, v2));
+        Console.WriteLine(Kangaroo(
+            posicaoInicialCanguru1,
+            distanciaDoPuloCanguru1,
+            posicaoInicialCanguru2,
+            distanciaDoPuloCanguru2));
     }
 
-    public static string Kangaroo(int x1, int v1, int x2, int v2)
+    public static string Kangaroo(
+        int posicaoInicialCanguru1,
+        int distanciaDoPuloCanguru1,
+        int posicaoInicialCanguru2,
+        int distanciaDoPuloCanguru2)
     {
-        throw new NotImplementedException("Implemente a lógica do kata Kangaroo.");
+        int posicaoAtualCanguru1 = posicaoInicialCanguru1;
+        int posicaoAtualCanguru2 = posicaoInicialCanguru2;
+        int distanciaAnterior = Math.Abs(posicaoAtualCanguru1 - posicaoAtualCanguru2);
+
+        if (distanciaAnterior == 0)
+        {
+            return "YES";
+        }
+
+        while (true)
+        {
+            posicaoAtualCanguru1 += distanciaDoPuloCanguru1;
+            posicaoAtualCanguru2 += distanciaDoPuloCanguru2;
+
+            int distanciaAtual = Math.Abs(posicaoAtualCanguru1 - posicaoAtualCanguru2);
+
+            if (distanciaAtual == 0)
+            {
+                return "YES";
+            }
+
+            if (distanciaAtual >= distanciaAnterior)
+            {
+                return "NO";
+            }
+
+            distanciaAnterior = distanciaAtual;
+        }
     }
 
-    private static bool TryReadInput(out int x1, out int v1, out int x2, out int v2)
+    private static bool TryReadInput(
+        out int posicaoInicialCanguru1,
+        out int distanciaDoPuloCanguru1,
+        out int posicaoInicialCanguru2,
+        out int distanciaDoPuloCanguru2)
     {
-        x1 = 0;
-        v1 = 0;
-        x2 = 0;
-        v2 = 0;
+        posicaoInicialCanguru1 = 0;
+        distanciaDoPuloCanguru1 = 0;
+        posicaoInicialCanguru2 = 0;
+        distanciaDoPuloCanguru2 = 0;
 
         string? input = Console.ReadLine();
-        string[] values = input?.Split(' ', StringSplitOptions.RemoveEmptyEntries) ?? [];
+        string[] valoresInformados = input?.Split(' ', StringSplitOptions.RemoveEmptyEntries) ?? [];
 
-        return values.Length == 4
-            && int.TryParse(values[0], out x1)
-            && int.TryParse(values[1], out v1)
-            && int.TryParse(values[2], out x2)
-            && int.TryParse(values[3], out v2);
+        return valoresInformados.Length == 4
+            && int.TryParse(valoresInformados[0], out posicaoInicialCanguru1)
+            && int.TryParse(valoresInformados[1], out distanciaDoPuloCanguru1)
+            && int.TryParse(valoresInformados[2], out posicaoInicialCanguru2)
+            && int.TryParse(valoresInformados[3], out distanciaDoPuloCanguru2);
     }
 }

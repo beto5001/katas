@@ -14,6 +14,7 @@
     <ProjectReference Include="..\4- Apple and Orange\4- Apple and Orange.csproj" />
     <ProjectReference Include="..\5- Kangaroo\5- Kangaroo.csproj" />
     <ProjectReference Include="..\6- Between Two Sets\6- Between Two Sets.csproj" />
+    <ProjectReference Include="..\7- Breaking the Records\7- Breaking the Records.csproj" />
   </ItemGroup>
 
 </Project>

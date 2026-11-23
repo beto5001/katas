@@ -7,7 +7,8 @@
     ("Grading Students", Katas.GradingStudents.GradingStudentsProgram.Run),
     ("Apple and Orange", Katas.AppleAndOrange.AppleAndOrangeProgram.Run),
     ("Kangaroo", Katas.Kangaroo.KangarooProgram.Run),
-    ("Between Two Sets", Katas.BetweenTwoSets.BetweenTwoSetsProgram.Run)
+    ("Between Two Sets", Katas.BetweenTwoSets.BetweenTwoSetsProgram.Run),
+    ("Breaking the Records", Katas.BreakingTheRecords.BreakingTheRecordsProgram.Run)
 };
 
 while (true)

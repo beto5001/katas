@@ -5,5 +5,6 @@
   <Project Path="4- Apple and Orange/4- Apple and Orange.csproj" />
   <Project Path="5- Kangaroo/5- Kangaroo.csproj" />
   <Project Path="6- Between Two Sets/6- Between Two Sets.csproj" />
+  <Project Path="7- Breaking the Records/7- Breaking the Records.csproj" />
   <Project Path="katas/katas.csproj" />
 </Solution>

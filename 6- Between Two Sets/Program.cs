@@ -28,7 +28,8 @@ public static class BetweenTwoSetsProgram
             return;
         }
 
-        // Desafio: implemente GetTotalX(a, b) e exiba seu retorno aqui.
+        int totalDeNumerosMagicos = GetTotalX(a, b);
+        Console.WriteLine($"Quantidade de números mágicos: {totalDeNumerosMagicos}");
     }
 
     /// <summary>
@@ -37,7 +38,20 @@ public static class BetweenTwoSetsProgram
     /// </summary>
     public static int GetTotalX(List<int> a, List<int> b)
     {
-        throw new NotImplementedException();
+        int magicNumber = 0;
+
+        for (int candidato = 1; candidato <= b.Min(); candidato++)
+        {
+            bool divididoPorTodosDoA = a.All(numeroDeA => candidato % numeroDeA == 0);
+            bool divideTodosDoB = b.All(numeroDeB => numeroDeB % candidato == 0);
+
+            if (divididoPorTodosDoA && divideTodosDoB)
+            {
+                magicNumber++;
+            }
+        }
+
+        return magicNumber;
     }
 
     private static bool TryReadTwoPositiveIntegers(out int first, out int second)

@@ -6,7 +6,8 @@
     ("Time Conversion", Katas.TimeConversion.TimeConversionProgram.Run),
     ("Grading Students", Katas.GradingStudents.GradingStudentsProgram.Run),
     ("Apple and Orange", Katas.AppleAndOrange.AppleAndOrangeProgram.Run),
-    ("Kangaroo", Katas.Kangaroo.KangarooProgram.Run)
+    ("Kangaroo", Katas.Kangaroo.KangarooProgram.Run),
+    ("Between Two Sets", Katas.BetweenTwoSets.BetweenTwoSetsProgram.Run)
 };
 
 while (true)

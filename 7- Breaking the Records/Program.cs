@@ -22,15 +22,37 @@ public static class BreakingTheRecordsProgram
             return;
         }
 
-        Console.WriteLine("Entrada carregada. Implemente BreakingRecords para obter os recordes quebrados.");
+        int[] recordsBroken = BreakingRecords(scores);
+        Console.WriteLine($"{recordsBroken[0]} {recordsBroken[1]}");
     }
 
     /// <summary>
     /// Retorna um array com dois itens: a quantidade de vezes que o recorde máximo
     /// e o recorde mínimo foram quebrados, nessa ordem.
     /// </summary>
-    public static int[] BreakingRecords(List<int> scores) =>
-        throw new NotImplementedException("Implemente o algoritmo deste kata.");
+    public static int[] BreakingRecords(List<int> scores)
+    {
+        int lowScoreBreaking = 0;
+        int lowScoreCurrent = scores.FirstOrDefault();
+        int highScoreBreaking = 0;
+        int highScoreCurrent = scores.FirstOrDefault();
+
+        foreach (int score in scores)
+        {
+            if (score > highScoreCurrent)
+            {
+                highScoreCurrent = score;
+                highScoreBreaking++;
+            }
+            if (score < lowScoreCurrent)
+            {
+                lowScoreCurrent = score;
+                lowScoreBreaking++;
+            }
+        }
+
+        return [highScoreBreaking, lowScoreBreaking];
+    }
 
     private static bool TryReadScores(int expectedCount, out List<int> scores)
     {

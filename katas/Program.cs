@@ -8,7 +8,8 @@
     ("Apple and Orange", Katas.AppleAndOrange.AppleAndOrangeProgram.Run),
     ("Kangaroo", Katas.Kangaroo.KangarooProgram.Run),
     ("Between Two Sets", Katas.BetweenTwoSets.BetweenTwoSetsProgram.Run),
-    ("Breaking the Records", Katas.BreakingTheRecords.BreakingTheRecordsProgram.Run)
+    ("Breaking the Records", Katas.BreakingTheRecords.BreakingTheRecordsProgram.Run),
+    ("Subarray Division", Katas.SubarrayDivision.SubarrayDivisionProgram.Run)
 };
 
 while (true)

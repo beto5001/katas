@@ -22,15 +22,28 @@ public static class SubarrayDivisionProgram
             return;
         }
 
-        Console.WriteLine("Implemente Birthday para resolver o desafio.");
+        int result = Birthday(squares, day, month);
+        Console.WriteLine($"Quantidade de segmentos que correspondem ao dia de nascimento: {result}");
     }
 
     /// <summary>
     /// Retorna a quantidade de segmentos contíguos de <paramref name="squares"/> com
     /// <paramref name="month"/> elementos cuja soma é igual a <paramref name="day"/>.
     /// </summary>
-    public static int Birthday(List<int> squares, int day, int month) =>
-        throw new NotImplementedException("Implemente a solução do kata.");
+    public static int Birthday(List<int> squares, int day, int month)
+    {
+        int count = 0;
+
+        for (int i = 0; i <= squares.Count - month; i++)
+        {
+            int sum = squares.Skip(i).Take(month).Sum();
+
+            if (sum == day)
+                count++;
+        }
+
+        return count;
+    }
 
     private static bool TryReadTwoPositiveIntegers(out int first, out int second)
     {

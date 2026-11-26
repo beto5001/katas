@@ -1,3 +1,5 @@
+using System.Runtime.Serialization;
+
 namespace Katas.DivisibleSumPairs;
 
 public static class DivisibleSumPairsProgram
@@ -31,7 +33,20 @@ public static class DivisibleSumPairsProgram
     /// </summary>
     public static int DivisibleSumPairs(List<int> numbers, int divisor)
     {
-        throw new NotImplementedException();
+        int count = 0;
+
+        for (int i = 0; i < numbers.Count; i++)
+        {
+            for (int j = i + 1; j < numbers.Count; j++)
+            {
+                int somaDoPar = numbers[i] + numbers[j];
+
+                if (somaDoPar % divisor == 0)
+                    count++;
+            }
+        }
+
+        return count;
     }
 
     private static bool TryReadTwoPositiveIntegers(out int first, out int second)

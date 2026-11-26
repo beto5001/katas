@@ -8,5 +8,6 @@
   <Project Path="7- Breaking the Records/7- Breaking the Records.csproj" />
   <Project Path="8- Subarray Division/8- Subarray Division.csproj" />
   <Project Path="9- Divisible Sum Pairs/9- Divisible Sum Pairs.csproj" />
+  <Project Path="10- Migratory Birds/10- Migratory Birds.csproj" />
   <Project Path="katas/katas.csproj" />
 </Solution>

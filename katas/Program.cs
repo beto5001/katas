@@ -10,7 +10,8 @@
     ("Between Two Sets", Katas.BetweenTwoSets.BetweenTwoSetsProgram.Run),
     ("Breaking the Records", Katas.BreakingTheRecords.BreakingTheRecordsProgram.Run),
     ("Subarray Division", Katas.SubarrayDivision.SubarrayDivisionProgram.Run),
-    ("Divisible Sum Pairs", Katas.DivisibleSumPairs.DivisibleSumPairsProgram.Run)
+    ("Divisible Sum Pairs", Katas.DivisibleSumPairs.DivisibleSumPairsProgram.Run),
+    ("Migratory Birds", Katas.MigratoryBirds.MigratoryBirdsProgram.Run)
 };
 
 while (true)

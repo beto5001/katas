@@ -17,6 +17,7 @@
     <ProjectReference Include="..\7- Breaking the Records\7- Breaking the Records.csproj" />
     <ProjectReference Include="..\8- Subarray Division\8- Subarray Division.csproj" />
     <ProjectReference Include="..\9- Divisible Sum Pairs\9- Divisible Sum Pairs.csproj" />
+    <ProjectReference Include="..\10- Migratory Birds\10- Migratory Birds.csproj" />
   </ItemGroup>
 
 </Project>

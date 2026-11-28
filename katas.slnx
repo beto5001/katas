@@ -9,5 +9,6 @@
   <Project Path="08- Subarray Division/08- Subarray Division.csproj" />
   <Project Path="09- Divisible Sum Pairs/09- Divisible Sum Pairs.csproj" />
   <Project Path="10- Migratory Birds/10- Migratory Birds.csproj" />
+  <Project Path="Katas.Tests/Katas.Tests.csproj" />
   <Project Path="katas/katas.csproj" />
 </Solution>

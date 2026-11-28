@@ -35,14 +35,17 @@ public static class MigratoryBirdsProgram
             birds.Add(bird);
         }
 
-        // TODO: chame MigratoryBirds(birds) após implementar a solução.
+        MigratoryBirds(birds);
     }
 
     /// <summary>
     /// Retorna o tipo de ave mais observado; em caso de empate, retorna o menor tipo.
     /// </summary>
-    public static int MigratoryBirds(List<int> birds)
-    {
-        throw new NotImplementedException();
-    }
+    public static int MigratoryBirds(List<int> birds) => birds.GroupBy(b => b)
+                                                              .Select(g => new { Key = g.Key, Count = g.Count() })
+                                                              .ToDictionary(x => x.Key, x => x.Count)
+                                                              .OrderByDescending(b => b.Value)
+                                                              .ThenBy(b => b.Key)
+                                                              .FirstOrDefault()
+                                                              .Key;
 }

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,15 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\1- Birthday Cake Candles\1- Birthday Cake Candles.csproj" />
-    <ProjectReference Include="..\2- Time Conversion\2- Time Conversion.csproj" />
-    <ProjectReference Include="..\3- Grading Students\3- Grading Students.csproj" />
-    <ProjectReference Include="..\4- Apple and Orange\4- Apple and Orange.csproj" />
-    <ProjectReference Include="..\5- Kangaroo\5- Kangaroo.csproj" />
-    <ProjectReference Include="..\6- Between Two Sets\6- Between Two Sets.csproj" />
-    <ProjectReference Include="..\7- Breaking the Records\7- Breaking the Records.csproj" />
-    <ProjectReference Include="..\8- Subarray Division\8- Subarray Division.csproj" />
-    <ProjectReference Include="..\9- Divisible Sum Pairs\9- Divisible Sum Pairs.csproj" />
+    <ProjectReference Include="..\01- Birthday Cake Candles\01- Birthday Cake Candles.csproj" />
+    <ProjectReference Include="..\02- Time Conversion\02- Time Conversion.csproj" />
+    <ProjectReference Include="..\03- Grading Students\03- Grading Students.csproj" />
+    <ProjectReference Include="..\04- Apple and Orange\04- Apple and Orange.csproj" />
+    <ProjectReference Include="..\05- Kangaroo\05- Kangaroo.csproj" />
+    <ProjectReference Include="..\06- Between Two Sets\06- Between Two Sets.csproj" />
+    <ProjectReference Include="..\07- Breaking the Records\07- Breaking the Records.csproj" />
+    <ProjectReference Include="..\08- Subarray Division\08- Subarray Division.csproj" />
+    <ProjectReference Include="..\09- Divisible Sum Pairs\09- Divisible Sum Pairs.csproj" />
     <ProjectReference Include="..\10- Migratory Birds\10- Migratory Birds.csproj" />
   </ItemGroup>
 

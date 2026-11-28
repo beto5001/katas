@@ -1,13 +1,13 @@
 <Solution>
-  <Project Path="1- Birthday Cake Candles/1- Birthday Cake Candles.csproj" />
-  <Project Path="2- Time Conversion/2- Time Conversion.csproj" />
-  <Project Path="3- Grading Students/3- Grading Students.csproj" />
-  <Project Path="4- Apple and Orange/4- Apple and Orange.csproj" />
-  <Project Path="5- Kangaroo/5- Kangaroo.csproj" />
-  <Project Path="6- Between Two Sets/6- Between Two Sets.csproj" />
-  <Project Path="7- Breaking the Records/7- Breaking the Records.csproj" />
-  <Project Path="8- Subarray Division/8- Subarray Division.csproj" />
-  <Project Path="9- Divisible Sum Pairs/9- Divisible Sum Pairs.csproj" />
+  <Project Path="01- Birthday Cake Candles/01- Birthday Cake Candles.csproj" />
+  <Project Path="02- Time Conversion/02- Time Conversion.csproj" />
+  <Project Path="03- Grading Students/03- Grading Students.csproj" />
+  <Project Path="04- Apple and Orange/04- Apple and Orange.csproj" />
+  <Project Path="05- Kangaroo/05- Kangaroo.csproj" />
+  <Project Path="06- Between Two Sets/06- Between Two Sets.csproj" />
+  <Project Path="07- Breaking the Records/07- Breaking the Records.csproj" />
+  <Project Path="08- Subarray Division/08- Subarray Division.csproj" />
+  <Project Path="09- Divisible Sum Pairs/09- Divisible Sum Pairs.csproj" />
   <Project Path="10- Migratory Birds/10- Migratory Birds.csproj" />
   <Project Path="katas/katas.csproj" />
 </Solution>
